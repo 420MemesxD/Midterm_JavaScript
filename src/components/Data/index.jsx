@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const Data = () => {
-  const APILINK = 'https://jsonplaceholder.typicode.com/posts';
+  //const APILINK = 'https://jsonplaceholder.typicode.com/posts';
   const [data, setData] = useState([]);
   const [fil, setFilter] = useState([]);
   const dataSet = useMemo(() => data, [data]);
@@ -33,19 +33,19 @@ const Data = () => {
     }
   };
 
-  const sort = event => {
-    event.persist();
-    const { name, type } = event.target.dataset;
-
-    let sorted;
-    if (type === "int")
-      sorted = data.sort((a, b) => Number(a[name]) - Number(b[name]));
-    else
-      sorted = data.sort((a, b) => {
-        if (a[name].toLowerCase() < b[name].toLowerCase()) return -1;
-        if (a[name].toLowerCase() > b[name].toLowerCase()) return 1;
-        return 0;
-      });
+  // const sort = event => {
+  //   event.persist();
+  //   const { name, type } = event.target.dataset;
+  //
+  //   let sorted;
+  //   if (type === "int")
+  //     sorted = data.sort((a, b) => Number(a[name]) - Number(b[name]));
+  //   else
+  //     sorted = data.sort((a, b) => {
+  //       if (a[name].toLowerCase() < b[name].toLowerCase()) return -1;
+  //       if (a[name].toLowerCase() > b[name].toLowerCase()) return 1;
+  //       return 0;
+  //     });
 
     // if (order) {
     //   sorted = sorted.reverse();
@@ -54,8 +54,8 @@ const Data = () => {
     //   setOrder(true);
     // }
 
-    setData([...sorted]);
-  };
+  //   setData([...sorted]);
+  // };
 
   return (
     <>
@@ -89,7 +89,7 @@ const Data = () => {
 
           <tbody>
           {filterData.map((user, i) => (
-              <tr>
+              <tr key={i}>
                 <td>{user.userId}</td>
                 <td>{user.id}</td>
                 <td>{user.title}</td>
