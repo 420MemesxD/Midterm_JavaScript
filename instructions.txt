@@ -1,0 +1,8 @@
+Objective:
+  To demonstrate you understanding of React, component design, and working with data.
+
+Instructions:
+  Step 1: Get your application running in the browser
+  Step 2: Fix the Home component
+  Step 3: Import the instructions component into the Home component and add it to the render in the indicated spot
+  Step 4: Follow the instructions on the Home page
